@@ -169,3 +169,6 @@ set shortmess+=A
 set pastetoggle=<F12>
 
 nmap <F5> :windo set scb!<cr>
+
+" disable markdown fold"
+let g:vim_markdown_folding_disabled = 1
