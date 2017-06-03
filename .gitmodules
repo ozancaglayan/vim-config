@@ -70,3 +70,6 @@
 	path = bundle/tagbar
 	url = git://github.com/majutsushi/tagbar
 	ignore = dirty
+[submodule "bundle/vimtex"]
+	path = bundle/vimtex
+	url = git://github.com/lervag/vimtex.git
