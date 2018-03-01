@@ -79,6 +79,7 @@ set smartcase
 set hlsearch
 set incsearch
 set showmatch
+set cc=80
 
 " to_html settings
 let html_number_lines = 1
@@ -172,3 +173,10 @@ nmap <F5> :windo set scb!<cr>
 
 " disable markdown fold"
 let g:vim_markdown_folding_disabled = 1
+
+fun! TrimWhitespace()
+  let l:save = winsaveview()
+  %s/\s\+$//e
+  call winrestview(l:save)
+endfun
+command! Tws call TrimWhitespace()
