@@ -10,8 +10,8 @@ syntax on
 " Colorscheme and terminal settings
 set term=xterm-256color
 set t_Co=256
-set background=light
-colorscheme solarized
+set background=dark
+colorscheme srcery
 
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
