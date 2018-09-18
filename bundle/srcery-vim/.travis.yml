@@ -1,0 +1,9 @@
+# vim-srcery .travis.yml
+
+language: python
+
+install:
+  - pip install vim-vint==v0.3.18
+
+script:
+  - vint --verbose --stat $(find . -type f -name '*.vim')
