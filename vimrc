@@ -8,8 +8,8 @@ set background=dark
 colorscheme srcery
 
 " Highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
+"highlight ExtraWhitespace ctermbg=red guibg=red
+"match ExtraWhitespace /\s\+$/
 
 filetype plugin indent on       " Do filetype detection and load custom file plugins and indent files
 set cursorline
@@ -36,8 +36,6 @@ map <UP> gk
 map <DOWN> gj
 map k gk
 map j gj
-
-autocmd BufNewFile,BufRead *.json set ft=javascript "use JS syntax for json files
 
 " Indentation and tabbing
 set autoindent
@@ -75,12 +73,6 @@ set incsearch
 set showmatch
 set cc=80
 
-" to_html settings
-let html_number_lines = 1
-let html_ignore_folding = 1
-let html_use_css = 1
-let xml_use_xhtml = 1
-
 " Keybindings to native vim features
 let mapleader=","
 let localmapleader=","
@@ -111,13 +103,6 @@ let g:quickfixsigns_classes=['qfl', 'vcsdiff', 'breakpoints']
 let g:Powerline_symbols = 'unicode'
 set laststatus=2
 
-let g:ctrlp_map = '<C-e>'
-let g:ctrlp_custom_ignore = '/\.\|\.o\|\.so'
-
-let s:ackcommand = executable('ack-grep') ? 'ack-grep' : 'ack'
-let g:ackprg=s:ackcommand." -H --nocolor --nogroup --column -a -i"
-noremap <Leader>a :Ack! <cword><cr>
-
 noremap <Leader>t= :Tabularize /=<CR>
 noremap <Leader>t: :Tabularize /^[^:]*:\zs/l0l1<CR>
 noremap <Leader>t> :Tabularize /=><CR>
@@ -147,16 +132,6 @@ function! CleanClose(tosave)
   exe "bd!".todelbufNr
 endfunction
 
-" Strip trailing whitespace
-function! StripWhitespace()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    :%s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
-endfunction
-noremap <leader>sw :call StripWhitespace()<CR>
-
 " Always edit file, even when swap file is found
 set shortmess+=A
 
@@ -168,9 +143,9 @@ nmap <F5> :windo set scb!<cr>
 " disable markdown fold"
 let g:vim_markdown_folding_disabled = 1
 
-fun! TrimWhitespace()
-  let l:save = winsaveview()
-  %s/\s\+$//e
-  call winrestview(l:save)
-endfun
-command! Tws call TrimWhitespace()
+nmap , [
+nmap ; ]
+omap , [
+omap ; ]
+xmap , [
+xmap ; ]
