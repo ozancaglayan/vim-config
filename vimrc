@@ -1,9 +1,3 @@
-"""""""""""""""""""""""""
-" Basic features
-"""""""""""""""""""""""""
-call pathogen#infect()
-call pathogen#helptags()
-
 " Display options
 syntax on
 
